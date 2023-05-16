@@ -15,6 +15,7 @@ function addBookToLibrary(title, author, pages, read) {
 addBookToLibrary('Happy Place', 'Emily Henry', 385, false);
 addBookToLibrary('The House of Eve', 'Sadeqa Johnson', 369, false);
 addBookToLibrary('Einstein\'s Dreams', 'Alan Lightman', 144, true);
+addBookToLibrary('The Likeness', 'Tana French', 466, true);
 
 const container = document.querySelector('.container')
 

@@ -1,0 +1,23 @@
+* {
+	margin: 0px;
+  padding: 0px;
+  border: 1px solid #eee;
+}
+
+body {
+  height: 100vh;
+  background: #333d29;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 48px;
+}
+
+.card {
+  background: #fff;
+}
