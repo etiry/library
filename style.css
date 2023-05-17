@@ -6,7 +6,8 @@
 
 body {
   height: 100vh;
-  background: #333d29;
+  background-image: url('assets/bg.jpg');
+  background-size: cover;
   display: grid;
   place-items: center;
 }
@@ -20,4 +21,26 @@ body {
 
 .card {
   background: #fff;
+}
+
+.add-book {
+  position: relative;
+  width: 100%;
+}
+
+.add-book-form {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+/*  width: 25%;
+  height: 50%;*/
+  border: 3px solid #999999;
+}
+
+.form {
+  max-width: 300px;
+  padding: 20px;
+  background-color: #fff;
 }

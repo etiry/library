@@ -12,6 +12,14 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(newBook);
 }
 
+function openAddBookForm() {
+  document.querySelector('.add-book-form').style.display = 'block';
+}
+
+function closeAddBookForm() {
+  document.querySelector('.add-book-form').style.display = 'none';
+}
+
 addBookToLibrary('Happy Place', 'Emily Henry', 385, false);
 addBookToLibrary('The House of Eve', 'Sadeqa Johnson', 369, false);
 addBookToLibrary('Einstein\'s Dreams', 'Alan Lightman', 144, true);
@@ -41,3 +49,6 @@ for (book of myLibrary) {
 
   container.appendChild(newBook);
 }
+
+const openButton = document.querySelector('.openButton')
+openButton.addEventListener('click', openAddBookForm)
