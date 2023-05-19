@@ -79,3 +79,6 @@ openButton.addEventListener('click', openAddBookForm);
 
 const submitButton = document.querySelector('.submit-button');
 submitButton.addEventListener('click', submitAddBookForm);
+
+const closeButton = document.querySelector('.close-button');
+closeButton.addEventListener('click', closeAddBookForm);

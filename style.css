@@ -65,13 +65,63 @@ h1 {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-/*  width: 25%;
-  height: 50%;*/
-  border: 3px solid #999999;
 }
 
 .form {
-  max-width: 300px;
-  padding: 20px;
-  background-color: #fff;
+  width: 300px;
+  padding: 24px;
+  background: #342421;
+  color: #D9DCE5;
+  font-family: 'Castoro', serif;
+  font-size: 18px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.close-button {
+  width: 24px;
+  margin-left: auto;
+}
+
+.form-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1.5fr;
+  margin: 12px;
+}
+
+label {
+  color: #D9DCE5;
+  font-size: 16px;
+}
+
+.req {
+  grid-column: 2;
+  justify-self: right;
+  color: #D9DCE5;
+  font-size: 12px;
+}
+
+input {
+  grid-column: 1 / -1;
+  border: none;
+  border-radius: 8px;
+  background: #D9DCE5;
+  padding: 8px;
+}
+
+input#read {
+  grid-column: 2;
+  justify-self: right;
+}
+
+.submit-button {
+  grid-column: 1 / -1;
+  background: #D9DCE5;
+  color: #342421;
+  font-family: 'Castoro', serif;
+  font-size: 18px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
 }
