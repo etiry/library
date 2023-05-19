@@ -18,6 +18,11 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(newBook);
 }
 
+function deleteBookFromLibrary(e) {
+  card = e.target.parentElement.parentElement;
+  card.remove();
+}
+
 function openAddBookForm() {
   document.querySelector('.add-book-form').style.display = 'block';
 }
@@ -54,12 +59,19 @@ function displayBooks() {
     const newBook = document.createElement('div');
     newBook.classList.add('card');
 
+    const closeButtonContainer = document.createElement('div');
+    closeButtonContainer.classList.add('close-button-card');
+    newBook.appendChild(closeButtonContainer);
+    const closeButton = document.createElement('img');
+    closeButton.src = 'assets/close.svg';
+    closeButtonContainer.appendChild(closeButton);
+
     const title = document.createElement('p');
     title.textContent = book.title;
     newBook.appendChild(title);
 
     const author = document.createElement('p');
-    author.textContent = book.author;
+    author.textContent = `by ${book.author}`;
     newBook.appendChild(author);
 
     const pages = document.createElement('p');
@@ -82,3 +94,8 @@ submitButton.addEventListener('click', submitAddBookForm);
 
 const closeButton = document.querySelector('.close-button');
 closeButton.addEventListener('click', closeAddBookForm);
+
+closeCardButtons = document.querySelectorAll('.close-button-card');
+for (let i = 0; i < closeCardButtons.length; i++) {
+  closeCardButtons[i].addEventListener("click", deleteBookFromLibrary);
+}
