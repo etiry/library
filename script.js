@@ -92,14 +92,17 @@ function displayBooks() {
     closeButtonContainer.appendChild(closeButton);
 
     const title = document.createElement('p');
+    title.classList.add('card-item-top');
     title.textContent = book.title;
     newBook.appendChild(title);
 
     const author = document.createElement('p');
+    author.classList.add('card-item');
     author.textContent = `by ${book.author}`;
     newBook.appendChild(author);
 
     const pages = document.createElement('p');
+    pages.classList.add('card-item');
     pages.textContent = `${book.pages} pages`;
     newBook.appendChild(pages);
 
