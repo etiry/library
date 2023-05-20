@@ -16,6 +16,10 @@ h1 {
   color: #342421;
 }
 
+p {
+  margin: 4px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -112,9 +116,14 @@ input {
   padding: 8px;
 }
 
-input#read {
-  grid-column: 2;
-  justify-self: right;
+.read-button {
+  background: #D9DCE5;
+  color: #342421;
+  font-family: 'Castoro', serif;
+  font-size: 18px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
 }
 
 .submit-button {

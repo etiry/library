@@ -53,10 +53,25 @@ function submitAddBookForm(e) {
   closeAddBookForm();
 }
 
+function toggleRead(e) {
+  if (e.target.textContent === 'Read') {
+    e.target.textContent = 'Not read';
+  } else {
+    e.target.textContent = 'Read';
+  }
+}
+
 function addDeleteOnClick() {
   closeCardButtons = document.querySelectorAll('.close-button-card');
   for (let i = 0; i < closeCardButtons.length; i++) {
-    closeCardButtons[i].addEventListener("click", deleteBookFromLibrary);
+    closeCardButtons[i].addEventListener('click', deleteBookFromLibrary);
+  }
+}
+
+function addToggleReadOnClick() {
+  readButtons = document.querySelectorAll('.read-button');
+  for (let i = 0; i < readButtons.length; i++) {
+    readButtons[i].addEventListener('click', toggleRead);  
   }
 }
 
@@ -88,13 +103,15 @@ function displayBooks() {
     pages.textContent = `${book.pages} pages`;
     newBook.appendChild(pages);
 
-    const read = document.createElement('p');
+    const read = document.createElement('button');
+    read.classList.add('read-button');
     book.read ? read.textContent = 'Read' : read.textContent = 'Not read';
     newBook.appendChild(read);
 
     bookContainer.appendChild(newBook);
 
     addDeleteOnClick();
+    addToggleReadOnClick();
   }
 }
 
@@ -106,5 +123,3 @@ submitButton.addEventListener('click', submitAddBookForm);
 
 const closeButton = document.querySelector('.close-button');
 closeButton.addEventListener('click', closeAddBookForm);
-
-
