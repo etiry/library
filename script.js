@@ -19,8 +19,10 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function deleteBookFromLibrary(e) {
-  card = e.target.parentElement.parentElement;
-  card.remove();
+  bookToDelete = e.target.parentElement.parentElement;
+  bookToDeleteIndex = bookToDelete.dataset.index;
+  deletedBookIndex = myLibrary.splice(bookToDeleteIndex, 1);
+  displayBooks();
 }
 
 function openAddBookForm() {
@@ -51,6 +53,13 @@ function submitAddBookForm(e) {
   closeAddBookForm();
 }
 
+function addDeleteOnClick() {
+  closeCardButtons = document.querySelectorAll('.close-button-card');
+  for (let i = 0; i < closeCardButtons.length; i++) {
+    closeCardButtons[i].addEventListener("click", deleteBookFromLibrary);
+  }
+}
+
 function displayBooks() {
   const bookContainer = document.querySelector('.book-container')
   bookContainer.textContent = '';
@@ -58,6 +67,7 @@ function displayBooks() {
   for (book of myLibrary) {
     const newBook = document.createElement('div');
     newBook.classList.add('card');
+    newBook.setAttribute('data-index', myLibrary.indexOf(book));
 
     const closeButtonContainer = document.createElement('div');
     closeButtonContainer.classList.add('close-button-card');
@@ -83,6 +93,8 @@ function displayBooks() {
     newBook.appendChild(read);
 
     bookContainer.appendChild(newBook);
+
+    addDeleteOnClick();
   }
 }
 
@@ -95,7 +107,4 @@ submitButton.addEventListener('click', submitAddBookForm);
 const closeButton = document.querySelector('.close-button');
 closeButton.addEventListener('click', closeAddBookForm);
 
-closeCardButtons = document.querySelectorAll('.close-button-card');
-for (let i = 0; i < closeCardButtons.length; i++) {
-  closeCardButtons[i].addEventListener("click", deleteBookFromLibrary);
-}
+
