@@ -54,11 +54,14 @@ function submitAddBookForm(e) {
 }
 
 function toggleRead(e) {
-  if (e.target.textContent === 'Read') {
-    e.target.textContent = 'Not read';
+  bookToToggle = e.target.parentElement;
+  bookToToggleIndex = bookToToggle.dataset.index;
+  if (myLibrary[bookToToggleIndex].read === true) {
+    myLibrary[bookToToggleIndex].read = false;
   } else {
-    e.target.textContent = 'Read';
+    myLibrary[bookToToggleIndex].read = true;
   }
+  displayBooks();  
 }
 
 function addDeleteOnClick() {
